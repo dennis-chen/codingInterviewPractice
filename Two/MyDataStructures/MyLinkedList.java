@@ -2,6 +2,7 @@ package MyDataStructures;
 
 public class MyLinkedList<T>{
     protected Node header = null;
+    protected int count;
 
     public MyLinkedList(T data){
         this.header = new Node<T>(data);
@@ -9,6 +10,7 @@ public class MyLinkedList<T>{
 
     public void append(T data){
         this.header.append(data);
+        this.count++;
     }
 
     public void delete(T data){
@@ -20,6 +22,7 @@ public class MyLinkedList<T>{
         while(n.next != null){
             if(n.next.data == data){
                 n.next = n.next.next;
+                this.count--;
                 return;
             }
             n = n.next;
@@ -36,5 +39,9 @@ public class MyLinkedList<T>{
         }
         values += n.data.toString();
         return values;
+    }
+
+    public int Count(){
+        return this.count;
     }
 }

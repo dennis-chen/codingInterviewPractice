@@ -8,6 +8,10 @@ public class Node<T>{
         this.data = data;
     }
 
+    public String toString(){
+        return data.toString();
+    }
+
     void append(T data){
         Node<T> end = new Node<T>(data);
         Node<T> n = this;
