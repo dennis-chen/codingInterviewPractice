@@ -1,7 +1,7 @@
 package MyDataStructures;
 
 public class MyLinkedList<T>{
-    protected Node header = null;
+    public Node header = null;
     protected int count;
 
     public MyLinkedList(T data){
