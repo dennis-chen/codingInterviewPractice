@@ -6,6 +6,17 @@ public class MyLinkedList<T>{
 
     public MyLinkedList(T data){
         this.header = new Node<T>(data);
+        this.count = 1;
+    }
+
+    public MyLinkedList(Node header){
+        this.header = header;
+        Node n = header;
+        this.count = 1;
+        while(n.next != null){
+            this.count++;
+            n = n.next;
+        }
     }
 
     public void append(T data){
