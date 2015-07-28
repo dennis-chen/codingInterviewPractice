@@ -23,11 +23,7 @@ class Five{
 
 
     public FiveLinkedList addForwards(FiveLinkedList<Integer> l1, FiveLinkedList<Integer> l2){
-        System.out.println(l1);
-        System.out.println(l2);
         PadList(l1, l2);
-        //System.out.println(l1);
-        //System.out.println(l2);
         Node solutionHead = new Node(0);
         int carry = addForwardsHelper(l1.header, l2.header, solutionHead);
         solutionHead.data = carry;
@@ -111,16 +107,16 @@ class Five{
         Node h1 = l1.header;
         Node h2 = l2.header;
         while(h1 != null || h2 != null){
-            if((h1 == null || h1.next == null) && h2.next != null){
+            if(h1.next == null && h2.next != null){
                 Node newHead = new Node(0);
                 newHead.next = l1.header;
                 l1.header = newHead;
-                h1 = null;
-            } else if(h1.next != null && (h2 == null || h2.next == null)){
+                h2 = h2.next;
+            } else if(h1.next != null && h2.next == null){
                 Node newHead = new Node(0);
                 newHead.next = l2.header;
                 l2.header = newHead;
-                h2 = null;
+                h1 = h1.next;
             } else {
                 h1 = h1.next;
                 h2 = h2.next;
