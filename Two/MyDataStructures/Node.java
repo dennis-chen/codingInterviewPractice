@@ -20,4 +20,12 @@ public class Node<T>{
         }
         n.next = end;
     }
+
+    void append(Node<T> node){
+        Node<T> n = this;
+        while(n.next != null){
+            n = n.next;
+        }
+        n.next = node;
+    }
 }

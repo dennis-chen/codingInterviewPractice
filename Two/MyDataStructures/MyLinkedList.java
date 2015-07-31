@@ -24,6 +24,11 @@ public class MyLinkedList<T>{
         this.count++;
     }
 
+    public void append(Node<T> node){
+        this.header.append(node);
+        this.count++;
+    }
+
     public void delete(T data){
         if(this.header.data == data){
             this.header = this.header.next;
