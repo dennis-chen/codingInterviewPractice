@@ -17,15 +17,25 @@ public class Stack{
         this.Top = newTop;
     }
 
+    public Object peek(){
+        if(this.Top == null){
+            return null;
+        }
+        return this.Top.data;
+    }
+
     public Object pop(){
         Node poppedItem = this.Top;
         this.Top = this.Top.next;
-        return poppedItem;
+        return poppedItem.data;
     }
 
     public String toString(){
         String s = "";
         Node n = this.Top;
+        if(n == null){
+            return "Empty stack!";
+        }
         while(n.next != null){
             s += n.toString();
             s += ", ";
