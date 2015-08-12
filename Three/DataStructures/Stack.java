@@ -39,6 +39,10 @@ public class Stack{
         return this.size;
     }
 
+    public boolean isEmpty(){
+        return this.size == 0;
+    }
+
     public String toString(){
         String s = "";
         Node n = this.Top;
