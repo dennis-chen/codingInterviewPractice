@@ -27,6 +27,9 @@ public class Stack{
 
     public Object pop(){
         Node poppedItem = this.Top;
+        if(poppedItem == null){
+            return null;
+        }
         this.Top = this.Top.next;
         this.size--;
         return poppedItem.data;
